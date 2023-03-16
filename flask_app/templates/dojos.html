@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dojos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .list-group a:hover{
+            color:rgb(61, 61, 175);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="container mt-5 d-flex justify-content-evenly">
+            <div class="left-side d-flex flex-column">
+                <p class="h1 mb-3">New Dojo</p>
+                <div class="mb-3 d-flex gap-3 align-items-center">
+                    <label for="" class="form-label">Name:</label>
+                    <input type="text"
+                    class="form-control" name="name" aria-describedby="helpId" placeholder="">
+                </div>
+                <button type="button" class="btn btn-dark align-self-center">Create</button>
+            </div>
+            <div>
+                <p class="h1 mb-3">All Dojos</p>
+                <div class="list-group mb-3">
+                    {% for dojo in all_dojos%}
+                    <a href="#" class="list-group-item list-group-item-action">{{dojo.name}}</a>
+                    {% endfor %}
+                </div>
+                <a name="" id="" class="btn btn-dark" href="/users/create" role="button">Add ninja</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
