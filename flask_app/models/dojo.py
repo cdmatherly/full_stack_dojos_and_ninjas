@@ -39,6 +39,7 @@ class Dojo:
         WHERE dojos.id = %(id)s;"""
         results = connectToMySQL(cls.DB).query_db(query,data)
         dojo = cls(results[0])
+        # Look at each row of the same dojo + ninjas and add each of those ninjas into our class "ninjas" list
         for dojo_row in results:
             # print (f"********************{ dojo_row }")
             ninja_data = {

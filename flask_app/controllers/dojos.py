@@ -3,11 +3,11 @@ from flask_app import app
 from flask_app.models.dojo import Dojo
 
 @app.route("/")
-def redirect_to_dojos():
+def index():
     return redirect('/dojos')
 
 @app.route("/dojos")
-def index():
+def main():
     all_dojos = Dojo.show_all()
 
     return render_template("dojos.html", all_dojos=all_dojos)
