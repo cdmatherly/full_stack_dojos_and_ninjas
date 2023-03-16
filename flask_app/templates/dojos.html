@@ -22,23 +22,25 @@
     </header>
     <main>
         <div class="container mt-5 d-flex justify-content-evenly">
-            <div class="left-side d-flex flex-column">
+            <div class="left-side">
                 <p class="h1 mb-3">New Dojo</p>
-                <div class="mb-3 d-flex gap-3 align-items-center">
-                    <label for="" class="form-label">Name:</label>
-                    <input type="text"
-                    class="form-control" name="name" aria-describedby="helpId" placeholder="">
-                </div>
-                <button type="button" class="btn btn-dark align-self-center">Create</button>
+                <form action="/dojos/create" method="post" class="d-flex flex-column">
+                    <div class="mb-3 d-flex gap-3 align-items-center">
+                        <label for="" class="form-label">Name:</label>
+                        <input type="text"
+                        class="form-control" name="name" aria-describedby="helpId" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-dark align-self-center">Create</button>
+                </form>
             </div>
             <div>
                 <p class="h1 mb-3">All Dojos</p>
                 <div class="list-group mb-3">
                     {% for dojo in all_dojos%}
-                    <a href="#" class="list-group-item list-group-item-action">{{dojo.name}}</a>
+                    <a href="/dojos/{{dojo.id}}" class="list-group-item list-group-item-action">{{dojo.name}}</a>
                     {% endfor %}
                 </div>
-                <a name="" id="" class="btn btn-dark" href="/users/create" role="button">Add ninja</a>
+                <a class="btn btn-dark" href="/ninjas" role="button">Add ninja</a>
             </div>
         </div>
     </main>
